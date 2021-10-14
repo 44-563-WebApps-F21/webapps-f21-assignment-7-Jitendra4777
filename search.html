@@ -27,6 +27,8 @@
 <p style="background-color: coral; text-align: center; color:rgb(255, 255, 255); font-size: 30px;" >Click on the squares to search for wild life</p>
 <p style="background-color:darkorchid; text-align: center; color: white; font-size: 30px;" id="tries">Number of tries is zero</p>
 <p id="distance" style="text-align: center; background-color: cornflowerblue;color: rgb(255, 255, 255); font-size: 30px;">Distance is unknown</p>
+<p id="distance" style="text-align: center; background-color: cornflowerblue;color: rgb(255, 255, 255); font-size: 30px;" onclick="game()">Reset the Game</p>
+
 <br>
 <br>
 
@@ -66,10 +68,29 @@
     var ids = ["id0", "id1", "id2", "id3", "id4", "id5", "id6", "id7", "id8", "id9", "id10", "id11", "id12", "id13", "id14", "id15", "id16", "id17", "id18", "id19", "id20", "id21", "id22", "id23"]
     var triesCount=0;
     var animalLocation=13;
+   
+    function game() {
+            tries = 0;
+            animal = Math.round(Math.random()*(23 - 0) + 0);
+            document.getElementById("tries").innerHTML = tries;
+            distance1 = "No idea"
+            document.getElementById("distance").innerHTML = distance1;
+        
+           
+            for (let index = 0; index <= 23; index++) {
+                console.log(animal)
+                
+              if(ids[index]==animal){
+                document.getElementById(ids[index]).src = "lion.jpg";
+            }else{
+                document.getElementById(ids[index]).src = "tree.jpg";
+            }
+        }
+        }
     function check(position) {
-          
+       
         if(position==animalLocation){
-            document.getElementById(ids[13]).src="lion.jpg";
+            document.getElementById(ids[animalLocation]).src="lion.jpg";
         }else{
             document.getElementById(ids[position]).src="hole.jpg";
         }
@@ -109,6 +130,8 @@
     }
    return Math.max(Math.abs(a-c),Math.abs(b-d))
         }
+
+      
 </script>
     </body>
 </html>

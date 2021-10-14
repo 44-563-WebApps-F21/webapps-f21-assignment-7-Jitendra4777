@@ -33,7 +33,8 @@
   }
 
   function startTime() {
-   for(let i=0;i<=3;i++){
+   randomCount = Math.round(Math.random() * (10 - 2) + 2)
+   for(let i=0;i<=randomCount;i++){
     setTimeout(function(){
       document.getElementById("countdown").innerHTML=i;
     }, (3-i)*1000)

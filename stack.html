@@ -36,7 +36,8 @@
 	<p> Press the button to create an new element of type div and then add it to the container.</p>
 		<button onclick="makeNewDiv()">Push value</button>
 		<button onclick="popItem()">POP Item</button>
-		<button onclick="zap()">Unique</button>
+		<button onclick="zap()">Zap</button>
+		<button onclick="Unique()">Unique</button>
 
 	
 	
@@ -73,7 +74,22 @@
 		   
 	   }
  }
+ function Unique() {
+        stackItems=document.getElementsByClassName("stack")
+		for(let i=0;i<stackItems.length;i++){
+		val = stackItems[i].innerHTML;
+                for (let j = i + 1; j < stackItems.length; j++) {
+                    let val2 = stackItems[j].innerHTML;
 
+                 if (val == val2) {
+                        console.log(stackItems[j])
+                        stackItems[j].remove();
+                        j--;
+                        i--;
+                    }
+                }
+			}
+    }
  
 
 </script>
